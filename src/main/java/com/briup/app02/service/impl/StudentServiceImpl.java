@@ -16,7 +16,7 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public List<Student> findAll() throws Exception {
-
+		//hello
 		// 调用studentMapper查询所有学生
 		List<Student> list = studentMapper.findAll();
 		if(!list.isEmpty()){
