@@ -1,5 +1,5 @@
 package com.briup.app02.bean;
-
+//xuesheng
 public class Student {
 	private Long id;
 	private String name;
