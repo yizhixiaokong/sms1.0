@@ -2,9 +2,44 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.briup.app02.dao.UserMapper">
+<mapper namespace="com.briup.app02.dao.UserMapper">
 
+	<!-- 查询全部 -->
+	<select id="findAll" resultType="com.briup.app02.bean.User">
+		select * from poll_user
+	</select>
 
+	<!-- 按照Id查询 -->
+	<select id="findById" parameterType="long" resultType="com.briup.app02.bean.User">
+		select *
+		from poll_user where id = #{id}
+	</select>
+
+	<!-- 按照Id删除 -->
+	<delete id="deleteById" parameterType="long">
+		delete from poll_user
+		where id = #{id}
+	</delete>
+
+	<!-- 更新信息 -->
+	<update id="update" parameterType="com.briup.app02.bean.User">
+		update poll_user set
+		name =
+		#{name},
+		gender = #{gender},
+		brith = #{brith},
+		hiredate =
+		#{hiredate}
+		where id =
+		#{id}
+	</update>
+
+	<!-- 添加 -->
+	<insert id="save" parameterType="com.briup.app02.bean.User">
+		insert into poll_user
+		values
+		(null,#{name},#{gender}, #{brith},#{hiredate})
+	</insert>
 
 
 </mapper>

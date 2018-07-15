@@ -8,19 +8,19 @@
 	<select id="findAll" resultType="com.briup.app02.bean.Student">
 		select * from tbl_student
 	</select>
-	
+
 	<!-- 按照Id查询 -->
 	<select id="findById" parameterType="long"
 		resultType="com.briup.app02.bean.Student">
 		select * from tbl_student where id = #{id}
 	</select>
-	
+
 	<!-- 按照Id删除 -->
 	<delete id="deleteById" parameterType="long">
 		delete from tbl_student
 		where id = #{id}
 	</delete>
-	
+
 	<!-- 更新学生信息 -->
 	<update id="update" parameterType="com.briup.app02.bean.Student">
 		update tbl_student set
@@ -29,12 +29,12 @@
 		age = #{age}
 		where id = #{id}
 	</update>
-	
+
 	<!-- 添加学生 -->
 	<insert id="save" parameterType="com.briup.app02.bean.Student">
-		insert into tbl_student 
+		insert into tbl_student
 		values
 		(null,#{name},#{age})
 	</insert>
-	
+
 </mapper>
