@@ -22,7 +22,7 @@ public class ClazzServiceImpl implements IClazzService {
 		if(!list.isEmpty()){
 			return list;
 		}else {
-			throw new Exception("无");
+			throw new Exception("无数据");
 		}
 	}
 
@@ -33,7 +33,7 @@ public class ClazzServiceImpl implements IClazzService {
 		if(clazz!=null){
 			return clazz;
 		}else {
-			throw new Exception("不存在");
+			throw new Exception("id不存在");
 		}
 		
 
@@ -48,7 +48,7 @@ public class ClazzServiceImpl implements IClazzService {
 			clazzMapper.deleteById(id);
 		}
 		else {
-			throw new Exception("删除的不存在");
+			throw new Exception("删除的id不存在");
 		}
 
 	}
@@ -60,7 +60,7 @@ public class ClazzServiceImpl implements IClazzService {
 			// 调用clazzMapper更新信息
 			clazzMapper.update(clazz);
 		}else{
-			throw new Exception("不存在");
+			throw new Exception("更新的id不存在");
 		}
 		
 

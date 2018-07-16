@@ -22,7 +22,7 @@ public class QqServiceImpl implements IQqService {
 		if(!list.isEmpty()){
 			return list;
 		}else {
-			throw new Exception("无");
+			throw new Exception("无数据");
 		}
 	}
 
@@ -33,7 +33,7 @@ public class QqServiceImpl implements IQqService {
 		if(qq!=null){
 			return qq;
 		}else {
-			throw new Exception("不存在");
+			throw new Exception("id不存在");
 		}
 		
 
@@ -48,7 +48,7 @@ public class QqServiceImpl implements IQqService {
 			qqMapper.deleteById(id);
 		}
 		else {
-			throw new Exception("删除的不存在");
+			throw new Exception("删除的id不存在");
 		}
 
 	}
@@ -60,7 +60,7 @@ public class QqServiceImpl implements IQqService {
 			// 调用qqMapper更新信息
 			qqMapper.update(qq);
 		}else{
-			throw new Exception("不存在");
+			throw new Exception("更新的id不存在");
 		}
 		
 

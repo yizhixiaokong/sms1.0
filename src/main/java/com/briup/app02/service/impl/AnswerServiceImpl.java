@@ -22,7 +22,7 @@ public class AnswerServiceImpl implements IAnswerService {
 		if(!list.isEmpty()){
 			return list;
 		}else {
-			throw new Exception("无");
+			throw new Exception("无数据");
 		}
 	}
 
@@ -33,7 +33,7 @@ public class AnswerServiceImpl implements IAnswerService {
 		if(answer!=null){
 			return answer;
 		}else {
-			throw new Exception("不存在");
+			throw new Exception("id不存在");
 		}
 		
 
@@ -48,7 +48,7 @@ public class AnswerServiceImpl implements IAnswerService {
 			answerMapper.deleteById(id);
 		}
 		else {
-			throw new Exception("删除的不存在");
+			throw new Exception("删除的id不存在");
 		}
 
 	}
@@ -60,7 +60,7 @@ public class AnswerServiceImpl implements IAnswerService {
 			// 调用answerMapper更新信息
 			answerMapper.update(answer);
 		}else{
-			throw new Exception("不存在");
+			throw new Exception("更新的id不存在");
 		}
 		
 

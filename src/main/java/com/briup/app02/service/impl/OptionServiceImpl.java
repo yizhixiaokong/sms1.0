@@ -22,7 +22,7 @@ public class OptionServiceImpl implements IOptionService {
 		if(!list.isEmpty()){
 			return list;
 		}else {
-			throw new Exception("无");
+			throw new Exception("无数据");
 		}
 	}
 
@@ -33,7 +33,7 @@ public class OptionServiceImpl implements IOptionService {
 		if(option!=null){
 			return option;
 		}else {
-			throw new Exception("不存在");
+			throw new Exception("id不存在");
 		}
 		
 
@@ -48,7 +48,7 @@ public class OptionServiceImpl implements IOptionService {
 			optionMapper.deleteById(id);
 		}
 		else {
-			throw new Exception("删除的不存在");
+			throw new Exception("删除的id不存在");
 		}
 
 	}
@@ -60,7 +60,7 @@ public class OptionServiceImpl implements IOptionService {
 			// 调用optionMapper更新信息
 			optionMapper.update(option);
 		}else{
-			throw new Exception("不存在");
+			throw new Exception("更新的id不存在");
 		}
 		
 

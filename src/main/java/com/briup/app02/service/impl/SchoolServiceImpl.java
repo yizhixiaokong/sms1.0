@@ -22,7 +22,7 @@ public class SchoolServiceImpl implements ISchoolService {
 		if(!list.isEmpty()){
 			return list;
 		}else {
-			throw new Exception("无");
+			throw new Exception("无数据");
 		}
 	}
 
@@ -33,7 +33,7 @@ public class SchoolServiceImpl implements ISchoolService {
 		if(school!=null){
 			return school;
 		}else {
-			throw new Exception("不存在");
+			throw new Exception("id不存在");
 		}
 		
 
@@ -48,7 +48,7 @@ public class SchoolServiceImpl implements ISchoolService {
 			schoolMapper.deleteById(id);
 		}
 		else {
-			throw new Exception("删除的不存在");
+			throw new Exception("删除的id不存在");
 		}
 
 	}
@@ -60,7 +60,7 @@ public class SchoolServiceImpl implements ISchoolService {
 			// 调用schoolMapper更新信息
 			schoolMapper.update(school);
 		}else{
-			throw new Exception("不存在");
+			throw new Exception("更新的id不存在");
 		}
 		
 	}
