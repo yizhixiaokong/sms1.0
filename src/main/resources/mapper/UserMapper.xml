@@ -27,7 +27,7 @@
 		name =
 		#{name},
 		gender = #{gender},
-		brith = #{brith},
+		birth = #{birth},
 		hiredate =
 		#{hiredate}
 		where id =
@@ -38,7 +38,7 @@
 	<insert id="save" parameterType="com.briup.app02.bean.User">
 		insert into poll_user
 		values
-		(null,#{name},#{gender}, #{brith},#{hiredate})
+		(null,#{name},#{gender}, #{birth},#{hiredate})
 	</insert>
 
 

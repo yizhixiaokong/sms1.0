@@ -3,8 +3,8 @@ package com.briup.app02.bean;
 public class Answer {
 	private Long id;
 	private String selection;
-	private String check;
-	private String contene;
+	private String checks;
+	private String content;
 	private Long survey_id;
 	public Long getId() {
 		return id;
@@ -19,16 +19,16 @@ public class Answer {
 		this.selection = selection;
 	}
 	public String getCheck() {
-		return check;
+		return checks;
 	}
-	public void setCheck(String check) {
-		this.check = check;
+	public void setCheck(String checks) {
+		this.checks = checks;
 	}
-	public String getContene() {
-		return contene;
+	public String getContent() {
+		return content;
 	}
-	public void setContene(String contene) {
-		this.contene = contene;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public Long getSurvey_id() {
 		return survey_id;
@@ -36,4 +36,5 @@ public class Answer {
 	public void setSurvey_id(Long survey_id) {
 		this.survey_id = survey_id;
 	}
+	
 }

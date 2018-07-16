@@ -26,7 +26,7 @@
 		update poll_answer set
 		selection =
 		#{selection},
-		check = #{check},
+		checks = #{checks},
 		content = #{content},
 		survey_id =
 		#{survey_id}
@@ -37,7 +37,7 @@
 	<insert id="save" parameterType="com.briup.app02.bean.Answer">
 		insert into poll_answer
 		values
-		(null,#{selection},#{check},#{content},#{survey_id})
+		(null,#{selection},#{checks},#{content},#{survey_id})
 	</insert>
 
 

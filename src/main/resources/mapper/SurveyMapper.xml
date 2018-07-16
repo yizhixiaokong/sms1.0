@@ -41,7 +41,7 @@
 	<insert id="save" parameterType="com.briup.app02.bean.Survey">
 		insert into poll_survey
 		values
-		(null,#{average},#{surveydate},{questionnaire_id},#{user_id},#{clazz_id},#{course_id})
+		(null,#{state},#{average},#{surveydate},#{questionnaire_id},#{user_id},#{clazz_id},#{course_id})
 	</insert>
 
 

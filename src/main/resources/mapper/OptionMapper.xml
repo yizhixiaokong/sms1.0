@@ -24,8 +24,8 @@
 	<!-- 更新信息 -->
 	<update id="update" parameterType="com.briup.app02.bean.Option">
 		update poll_option set
-		lable =
-		#{lable},
+		label =
+		#{label},
 		content = #{content},
 		score = #{score},
 		question_id =
@@ -37,7 +37,7 @@
 	<insert id="save" parameterType="com.briup.app02.bean.Option">
 		insert into poll_option
 		values
-		(null,#{lable},#{content},#{score},#{question_id})
+		(null,#{label},#{content},#{score},#{question_id})
 	</insert>
 
 

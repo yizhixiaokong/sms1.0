@@ -3,7 +3,7 @@ package com.briup.app02.bean;
 public class Question {
 	private Long id;
 	private String name;
-	private String qusetiontype;
+	private String questiontype;
 	public Long getId() {
 		return id;
 	}
@@ -16,10 +16,11 @@ public class Question {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getQusetiontype() {
-		return qusetiontype;
+	public String getQuestiontype() {
+		return questiontype;
 	}
-	public void setQusetiontype(String qusetiontype) {
-		this.qusetiontype = qusetiontype;
+	public void setQuestiontype(String questiontype) {
+		this.questiontype = questiontype;
 	}
+	
 }	

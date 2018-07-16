@@ -3,9 +3,6 @@ package com.briup.app02.bean;
 public class Option {
 	private Long id;
 	private String label;
-	private String content;
-	private Integer score;
-	private Long qusetion_id;
 	public Long getId() {
 		return id;
 	}
@@ -30,10 +27,14 @@ public class Option {
 	public void setScore(Integer score) {
 		this.score = score;
 	}
-	public Long getQusetion_id() {
-		return qusetion_id;
+	public Long getQuestion_id() {
+		return question_id;
 	}
-	public void setQusetion_id(Long qusetion_id) {
-		this.qusetion_id = qusetion_id;
+	public void setQuestion_id(Long question_id) {
+		this.question_id = question_id;
 	}
+	private String content;
+	private Integer score;
+	private Long question_id;
+	
 }
