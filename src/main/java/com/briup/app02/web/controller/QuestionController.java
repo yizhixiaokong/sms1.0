@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Question;
 import com.briup.app02.service.IQuestionService;
 import com.briup.app02.util.MsgResponse;
+import com.briup.app02.vm.QuestionVM;
 
 @RestController
 @RequestMapping("/question")
@@ -21,12 +22,13 @@ public class QuestionController {
 	private IQuestionService questionService;
 
 	// http://127.0.0.1:8080/question/findAllQuestion
-	
+
 	/**
 	 * 查询全部
-	 * @param 
+	 * 
+	 * @param
 	 * @return List<Question>
-	 * */
+	 */
 	@GetMapping("findAllQuestion")
 	public MsgResponse findAllQuestion() {
 
@@ -39,12 +41,24 @@ public class QuestionController {
 		}
 	}
 
-	
+	@GetMapping("findAllQuestionVM")
+	public MsgResponse findAllQuestionVM() {
+
+		try {
+			List<QuestionVM> list = questionService.findAllQuestionVM();
+			return MsgResponse.success("查询成功", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+
 	/**
 	 * 按照Id查询
+	 * 
 	 * @param long
 	 * @return Studnet;
-	 * */
+	 */
 	@GetMapping("findQuestionById")
 	public MsgResponse findQuestionById(long id) {
 		try {
@@ -56,13 +70,13 @@ public class QuestionController {
 		}
 	}
 
-	
 	/**
 	 * 按照Id删除
+	 * 
 	 * @param long
 	 * @return String
-	 * */
-	
+	 */
+
 	@GetMapping("deleteQuestionById")
 	public MsgResponse deleteQuestionById(long id) {
 		try {
@@ -75,12 +89,12 @@ public class QuestionController {
 		}
 	}
 
-	
 	/**
 	 * 更新信息
+	 * 
 	 * @param studeng
 	 * @return String
-	 * */
+	 */
 	@PostMapping("updateQuestion")
 	public MsgResponse updateQuestion(Question question) {
 		try {
@@ -93,15 +107,15 @@ public class QuestionController {
 
 	}
 
-	
 	/**
 	 * 保存信息
+	 * 
 	 * @param question
 	 * @return String
-	 * */
+	 */
 	@PostMapping("saveQuestion")
 	public MsgResponse saveQuestion(Question question) {
-		try {	
+		try {
 			questionService.save(question);
 			return MsgResponse.success("添加成功", null);
 		} catch (Exception e) {

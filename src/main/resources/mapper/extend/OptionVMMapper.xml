@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.app02.dao.extend.OptionVMMapper">
+
+	<!-- 按照Id查询 -->
+	<select id="findOptionVMById" parameterType="long" resultMap="OptionVMResultMap">
+		select *
+		from poll_option where id = #{id}
+	</select>
+
+	<resultMap type="com.briup.app02.vm.OptionVM" id="OptionVMResultMap">
+		<id column="id" property="id" />
+		<result column="label" property="label" />
+		<result column="content" property="content" />
+		<result column="score" property="score" />
+		<association column="question_id" property="question"
+			select="com.briup.app02.dao.QuestionMapper.findById">
+		</association>
+	</resultMap>
+
+
+
+
+
+
+
+</mapper>

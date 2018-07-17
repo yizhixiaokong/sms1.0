@@ -8,6 +8,9 @@ public interface OptionMapper {
 	// 查询所有
 	List<Option> findAll();
 
+	//按照外键查询
+	List<Option> findByQuestionId(long id);
+	
 	// 按照id查询
 	Option findById(long id);
 

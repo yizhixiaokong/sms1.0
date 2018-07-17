@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Option;
 import com.briup.app02.service.IOptionService;
 import com.briup.app02.util.MsgResponse;
+import com.briup.app02.vm.OptionVM;
 
 @RestController
 @RequestMapping("/option")
@@ -50,6 +51,17 @@ public class OptionController {
 		try {
 			Option option = optionService.findById(id);
 			return MsgResponse.success("查询成功", option);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
+	@GetMapping("findOptionVMById")
+	public MsgResponse findOptionVMById(long id) {
+		try {
+			OptionVM optionVM = optionService.findOptionVMById(id);
+			return MsgResponse.success("查询成功", optionVM);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return MsgResponse.error(e.getMessage());

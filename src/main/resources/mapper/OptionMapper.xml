@@ -14,6 +14,12 @@
 		resultType="com.briup.app02.bean.Option">
 		select * from poll_option where id = #{id}
 	</select>
+	
+	<!-- 按照Question_id查询 -->
+	<select id="findByQuestionId" parameterType="long"
+		resultType="com.briup.app02.bean.Option">
+		select * from poll_option where question_id = #{question_id}
+	</select>
 
 	<!-- 按照Id删除 -->
 	<delete id="deleteById" parameterType="long">

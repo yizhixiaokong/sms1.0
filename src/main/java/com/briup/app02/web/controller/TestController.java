@@ -1,5 +1,6 @@
 package com.briup.app02.web.controller;
 
+import org.junit.Ignore;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
  * http://127.0.0.1:8080/test/hello 访问到当前项目的TestController类中的hello方法
  * 		
  * */
+
+@Ignore
 @RestController
 @RequestMapping("/test")
 public class TestController {

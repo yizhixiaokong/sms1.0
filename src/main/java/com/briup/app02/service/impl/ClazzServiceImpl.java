@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Clazz;
 import com.briup.app02.dao.ClazzMapper;
+import com.briup.app02.dao.extend.ClazzVMMapper;
 import com.briup.app02.service.IClazzService;
+import com.briup.app02.vm.ClazzVM;
 
 @Service
 public class ClazzServiceImpl implements IClazzService {
 	@Autowired
 	private ClazzMapper clazzMapper;
-
+	@Autowired
+	private ClazzVMMapper clazzVMMapper;
+	
 	@Override
 	public List<Clazz> findAll() throws Exception {
 		//hello
@@ -25,6 +29,17 @@ public class ClazzServiceImpl implements IClazzService {
 			throw new Exception("无数据");
 		}
 	}
+	@Override
+	public List<ClazzVM> findAllClazzVM() throws Exception {
+		List<ClazzVM> list = clazzVMMapper.findAllClazzVM();
+		if(!list.isEmpty()){
+			return list;
+		}
+		else {
+			throw new Exception("无数据");
+		}
+		
+	}
 
 	@Override
 	public Clazz findById(long id) throws Exception {
@@ -35,9 +50,20 @@ public class ClazzServiceImpl implements IClazzService {
 		}else {
 			throw new Exception("id不存在");
 		}
-		
-
 	}
+	
+	@Override
+	public ClazzVM findClazzVMById(long id) throws Exception {
+		// TODO Auto-generated method stub
+		ClazzVM clazzVM = clazzVMMapper.findClazzVMById(id);
+		if(clazzVM!=null){
+			return clazzVM;
+		}
+		else {
+			throw new Exception("id不存在");
+		}
+	}
+	
 
 	@Override
 	public void deleteById(long id) throws Exception {
@@ -71,5 +97,8 @@ public class ClazzServiceImpl implements IClazzService {
 		// 调用clazzMapper添加
 		clazzMapper.save(clazz);
 	}
+	
+
+	
 
 }

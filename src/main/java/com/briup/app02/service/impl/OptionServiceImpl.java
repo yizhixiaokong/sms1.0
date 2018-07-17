@@ -7,12 +7,16 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Option;
 import com.briup.app02.dao.OptionMapper;
+import com.briup.app02.dao.extend.OptionVMMapper;
 import com.briup.app02.service.IOptionService;
+import com.briup.app02.vm.OptionVM;
 
 @Service
 public class OptionServiceImpl implements IOptionService {
 	@Autowired
 	private OptionMapper optionMapper;
+	@Autowired
+	private OptionVMMapper optionVMMapper;
 
 	@Override
 	public List<Option> findAll() throws Exception {
@@ -35,9 +39,30 @@ public class OptionServiceImpl implements IOptionService {
 		}else {
 			throw new Exception("id不存在");
 		}
-		
-
 	}
+	
+	@Override
+	public OptionVM findOptionVMById(long id) throws Exception {
+		// TODO Auto-generated method stub
+		OptionVM optionVM = optionVMMapper.findOptionVMById(id);
+		if (optionVM != null) {
+			return optionVM;
+		} else {
+			throw new Exception("id不存在");
+		}
+	}
+	
+	@Override
+	public List<Option> findByQuestionId(long id) throws Exception {
+		List<Option> list = optionMapper.findByQuestionId(id);
+		if(!list.isEmpty()){
+			return list;
+		}else {
+			throw new Exception("无数据");
+		}
+	}
+	
+	
 
 	@Override
 	public void deleteById(long id) throws Exception {
@@ -71,5 +96,7 @@ public class OptionServiceImpl implements IOptionService {
 		// 调用optionMapper添加
 		optionMapper.save(option);
 	}
+
+	
 
 }
