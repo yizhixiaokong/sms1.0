@@ -14,6 +14,9 @@ import com.briup.app02.util.MsgResponse;
 import com.briup.app02.vm.QuestionVM;
 import com.briup.app02.vm.QuestionnaireVM;
 
+import io.swagger.annotations.Api;
+
+@Api(description="Qq相关接口")
 @RestController
 @RequestMapping("/qq")
 public class QqController {

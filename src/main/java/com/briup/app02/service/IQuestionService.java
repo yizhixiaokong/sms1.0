@@ -19,5 +19,6 @@ public interface IQuestionService {
 
 	void update(Question question) throws Exception;
 
-	void save(Question question) throws Exception;
+	void save(QuestionVM questionVM) throws Exception;
+	
 }

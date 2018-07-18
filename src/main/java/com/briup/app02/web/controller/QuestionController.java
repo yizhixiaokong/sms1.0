@@ -13,6 +13,11 @@ import com.briup.app02.service.IQuestionService;
 import com.briup.app02.util.MsgResponse;
 import com.briup.app02.vm.QuestionVM;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+
+@Api(description="问题相关接口")
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
@@ -21,6 +26,19 @@ public class QuestionController {
 	@Autowired
 	private IQuestionService questionService;
 
+	
+	@ApiOperation(value= "保存问题",notes="保存问题同时保存选项")
+	@PostMapping("saveQuestion")
+	public MsgResponse saveQuestion(QuestionVM questionVM){
+		try {
+			questionService.save(questionVM);
+			return MsgResponse.success("保存成功", null);
+		} catch (Exception e) {
+			return MsgResponse.error(e.getMessage());
+		}
+		
+	}
+	
 	// http://127.0.0.1:8080/question/findAllQuestion
 
 	/**
@@ -100,6 +118,7 @@ public class QuestionController {
 		}
 	}
 
+
 	/**
 	 * 更新信息
 	 * 
@@ -117,13 +136,15 @@ public class QuestionController {
 		}
 
 	}
-
+	
 	/**
 	 * 保存信息
 	 * 
 	 * @param question
 	 * @return String
 	 */
+	
+	/*
 	@PostMapping("saveQuestion")
 	public MsgResponse saveQuestion(Question question) {
 		try {
@@ -134,5 +155,7 @@ public class QuestionController {
 			return MsgResponse.error(e.getMessage());
 		}
 	}
+	
+	*/
 
 }

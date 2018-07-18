@@ -12,6 +12,10 @@ import com.briup.app02.bean.School;
 import com.briup.app02.service.ISchoolService;
 import com.briup.app02.util.MsgResponse;
 
+import io.swagger.annotations.Api;
+
+
+@Api(description="学校相关接口")
 @RestController
 @RequestMapping("/school")
 public class SchoolController {

@@ -12,6 +12,10 @@ import com.briup.app02.bean.Course;
 import com.briup.app02.service.ICourseService;
 import com.briup.app02.util.MsgResponse;
 
+import io.swagger.annotations.Api;
+
+
+@Api(description="课程相关接口")
 @RestController
 @RequestMapping("/course")
 public class CourseController {

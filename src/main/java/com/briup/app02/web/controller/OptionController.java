@@ -13,6 +13,10 @@ import com.briup.app02.service.IOptionService;
 import com.briup.app02.util.MsgResponse;
 import com.briup.app02.vm.OptionVM;
 
+import io.swagger.annotations.Api;
+
+
+@Api(description="选项相关接口")
 @RestController
 @RequestMapping("/option")
 public class OptionController {

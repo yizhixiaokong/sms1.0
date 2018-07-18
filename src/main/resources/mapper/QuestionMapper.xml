@@ -34,7 +34,7 @@
 	</update>
 
 	<!-- 添加 -->
-	<insert id="save" parameterType="com.briup.app02.bean.Question">
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="com.briup.app02.bean.Question">
 		insert into poll_question
 		values
 		(null,#{name},#{questiontype})

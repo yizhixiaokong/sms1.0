@@ -64,6 +64,7 @@ public class ClazzController {
 	 * @param long
 	 * @return Studnet;
 	 * */
+	@ApiOperation(value="按ID查询班级",notes="查询班级基本信息，不能查到班级和班主任")
 	@GetMapping("findClazzById")
 	public MsgResponse findClazzById(long id) {
 		try {
@@ -75,6 +76,7 @@ public class ClazzController {
 		}
 	}
 
+	@ApiOperation(value="按ID查询班级",notes="查询班级基本信息，能查到班级和班主任")
 	@GetMapping("findClazzVMById")
 	public MsgResponse findClazzVMById(long id) {
 		try {
@@ -91,7 +93,7 @@ public class ClazzController {
 	 * @param long
 	 * @return String
 	 * */
-	
+	@ApiOperation(value="按ID删除班级",notes="删除班级")
 	@GetMapping("deleteClazzById")
 	public MsgResponse deleteClazzById(long id) {
 		try {
@@ -110,6 +112,7 @@ public class ClazzController {
 	 * @param studeng
 	 * @return String
 	 * */
+	@ApiOperation(value="更新班级",notes="更新班级基本信息")
 	@PostMapping("updateClazz")
 	public MsgResponse updateClazz(Clazz clazz) {
 		try {
@@ -128,6 +131,7 @@ public class ClazzController {
 	 * @param clazz
 	 * @return String
 	 * */
+	@ApiOperation(value="添加班级",notes="添加一个新的班级")
 	@PostMapping("saveClazz")
 	public MsgResponse saveClazz(Clazz clazz) {
 		try {	
