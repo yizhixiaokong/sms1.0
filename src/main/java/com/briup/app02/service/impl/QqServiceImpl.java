@@ -9,7 +9,8 @@ import com.briup.app02.bean.Qq;
 import com.briup.app02.dao.QqMapper;
 import com.briup.app02.dao.extend.QqVMMapper;
 import com.briup.app02.service.IQqService;
-import com.briup.app02.vm.QqVM;
+import com.briup.app02.vm.QuestionVM;
+import com.briup.app02.vm.QuestionnaireVM;
 
 @Service
 public class QqServiceImpl implements IQqService {
@@ -42,8 +43,8 @@ public class QqServiceImpl implements IQqService {
 	}
 
 	@Override
-	public List<QqVM> findQqVMByQuestionId(long id) throws Exception {
-		List<QqVM> list = qqVMMapper.findQqVMByQuestionId(id);
+	public List<QuestionnaireVM> findQuestionnaireVMByQuestionId(long id) throws Exception {
+		List<QuestionnaireVM> list = qqVMMapper.findQuestionnaireVMByQuestionId(id);
 		if(!list.isEmpty()){
 			return list;
 		}
@@ -53,8 +54,8 @@ public class QqServiceImpl implements IQqService {
 	}
 
 	@Override
-	public List<QqVM> findQqVMByQuestionnaireId(long id) throws Exception {
-		List<QqVM> list = qqVMMapper.findQqVMByQuestionnaireId(id);
+	public List<QuestionVM> findQuestionVMByQuestionnaireId(long id) throws Exception {
+		List<QuestionVM> list = qqVMMapper.findQuestionVMByQuestionnaireId(id);
 		if(!list.isEmpty()){
 			return list;
 		}

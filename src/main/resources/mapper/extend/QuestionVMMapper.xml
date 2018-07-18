@@ -10,6 +10,12 @@
 		poll_question
 	</select>
 
+	<!-- 查询QuestionVMByID -->
+	<select id="findQuestionVMById" resultMap="QuestionVMResultMap">
+		select * from
+		poll_question where id = #{id}
+	</select>
+
 
 
 	<resultMap type="com.briup.app02.vm.QuestionVM" id="QuestionVMResultMap">

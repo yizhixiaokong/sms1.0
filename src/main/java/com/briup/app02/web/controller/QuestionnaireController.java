@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Questionnaire;
 import com.briup.app02.service.IQuestionnaireService;
 import com.briup.app02.util.MsgResponse;
+import com.briup.app02.vm.QuestionnaireVM;
 
 @RestController
 @RequestMapping("/questionnaire")
@@ -39,6 +40,17 @@ public class QuestionnaireController {
 		}
 	}
 
+	@GetMapping("findAllQuestionnaireVM")
+	public MsgResponse findAllQuestionnaireVM() {
+
+		try {
+			List<QuestionnaireVM> list = questionnaireService.findAllQuestionnaireVM();
+			return MsgResponse.success("查询成功", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	/**
 	 * 按照Id查询
@@ -56,6 +68,16 @@ public class QuestionnaireController {
 		}
 	}
 
+	@GetMapping("findQuestionnaireVMById")
+	public MsgResponse findQuestionnaireVMById(long id) {
+		try {
+			QuestionnaireVM questionnaireVM = questionnaireService.findQuestionnaireVMById(id);
+			return MsgResponse.success("查询成功", questionnaireVM);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	/**
 	 * 按照Id删除

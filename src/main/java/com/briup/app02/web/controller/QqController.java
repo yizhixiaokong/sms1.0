@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Qq;
 import com.briup.app02.service.IQqService;
 import com.briup.app02.util.MsgResponse;
-import com.briup.app02.vm.QqVM;
+import com.briup.app02.vm.QuestionVM;
+import com.briup.app02.vm.QuestionnaireVM;
 
 @RestController
 @RequestMapping("/qq")
@@ -59,10 +60,10 @@ public class QqController {
 	}
 
 	
-	@GetMapping("findQqVMByQuestionId")
-	public MsgResponse findQqVMByQuestionId(long id) {
+	@GetMapping("findQuestionnaireVMByQuestionId")
+	public MsgResponse findQuestionnaireVMByQuestionId(long id) {
 		try {
-			List<QqVM> list = qqService.findQqVMByQuestionId(id);
+			List<QuestionnaireVM> list = qqService.findQuestionnaireVMByQuestionId(id);
 			return MsgResponse.success("查询成功", list);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,10 +71,10 @@ public class QqController {
 		}
 	}
 	
-	@GetMapping("findQqVMByQuestionnaireId")
-	public MsgResponse findQqVMByQuestionnaireId(long id) {
+	@GetMapping("findQuestionVMByQuestionnaireId")
+	public MsgResponse findQuestionVMByQuestionnaireId(long id) {
 		try {
-			List<QqVM> list = qqService.findQqVMByQuestionnaireId(id);
+			List<QuestionVM> list = qqService.findQuestionVMByQuestionnaireId(id);
 			return MsgResponse.success("查询成功", list);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -5,35 +5,26 @@
 <mapper namespace="com.briup.app02.dao.extend.QqVMMapper">
 
 	<!-- 按照Question_id查询 -->
-	<select id="findQqVMByQuestionId" parameterType="long"
-		resultMap="QqVMQuestionnaireResultMap">
+	<select id="findQuestionnaireVMByQuestionId" parameterType="long"
+		resultType="com.briup.app02.bean.Questionnaire">
 		select * from poll_qq where question_id = #{question_id}
 	</select>
 
 	<!-- 按照Questionnaire_id查询 -->
-	<select id="findQqVMByQuestionnaireId" parameterType="long"
+	<select id="findQuestionVMByQuestionnaireId" parameterType="long"
 		resultMap="QqVMQuestionResultMap">
 		select * from poll_qq where questionnaire_id =
-		#{questionnaire_id}
+		#{id}
 	</select>
 
 
 	<resultMap type="com.briup.app02.vm.QqVM" id="QqVMQuestionResultMap">
-		<id column="id" property="id" />
-		<association column="question_id" property="question"
-			select="com.briup.app02.dao.QuestionMapper.findById">
+		<association column="question_id" property="questionVMs"
+			select="com.briup.app02.dao.extend.QuestionVMMapper.findQuestionVMById">
 		</association>
-		
-	</resultMap>
 
-	<resultMap type="com.briup.app02.vm.QqVM" id="QqVMQuestionnaireResultMap">
-		<id column="id" property="id" />
-		
-		<association column="questionnaire_id" property="questionnaire"
-			select="com.briup.app02.dao.QuestionnaireMapper.findById">
-		</association>
-	</resultMap>
 
+	</resultMap>
 
 
 
