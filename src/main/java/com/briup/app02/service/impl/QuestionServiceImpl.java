@@ -16,7 +16,7 @@ public class QuestionServiceImpl implements IQuestionService {
 	@Autowired
 	private QuestionMapper questionMapper;
 	@Autowired
-	private QuestionVMMapper qusetionVMMapper;
+	private QuestionVMMapper questionVMMapper;
 
 	@Override
 	public List<Question> findAll() throws Exception {
@@ -33,7 +33,7 @@ public class QuestionServiceImpl implements IQuestionService {
 	@Override
 	public List<QuestionVM> findAllQuestionVM() throws Exception {
 		// 调用questionMapper查询所有
-		List<QuestionVM> list = qusetionVMMapper.findAllQuestionVM();
+		List<QuestionVM> list = questionVMMapper.findAllQuestionVM();
 		if (!list.isEmpty()) {
 			return list;
 		} else {
@@ -47,6 +47,18 @@ public class QuestionServiceImpl implements IQuestionService {
 		Question question = questionMapper.findById(id);
 		if (question != null) {
 			return question;
+		} else {
+			throw new Exception("id不存在");
+		}
+
+	}
+	
+	@Override
+	public QuestionVM findQuestionVMById(long id) throws Exception {
+		// 调用questionMapper按照id查询
+		QuestionVM questionVM = questionVMMapper.findQuestionVMById(id);
+		if (questionVM != null) {
+			return questionVM;
 		} else {
 			throw new Exception("id不存在");
 		}

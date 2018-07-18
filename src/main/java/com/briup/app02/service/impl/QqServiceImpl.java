@@ -7,13 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Qq;
 import com.briup.app02.dao.QqMapper;
+import com.briup.app02.dao.extend.QqVMMapper;
 import com.briup.app02.service.IQqService;
+import com.briup.app02.vm.QqVM;
 
 @Service
 public class QqServiceImpl implements IQqService {
 	@Autowired
 	private QqMapper qqMapper;
-
+	@Autowired
+	private QqVMMapper qqVMMapper;
+	
 	@Override
 	public List<Qq> findAll() throws Exception {
 		//hello
@@ -35,10 +39,30 @@ public class QqServiceImpl implements IQqService {
 		}else {
 			throw new Exception("id不存在");
 		}
-		
-
 	}
 
+	@Override
+	public List<QqVM> findQqVMByQuestionId(long id) throws Exception {
+		List<QqVM> list = qqVMMapper.findQqVMByQuestionId(id);
+		if(!list.isEmpty()){
+			return list;
+		}
+		else {
+			throw new Exception("id不存在");
+		}
+	}
+
+	@Override
+	public List<QqVM> findQqVMByQuestionnaireId(long id) throws Exception {
+		List<QqVM> list = qqVMMapper.findQqVMByQuestionnaireId(id);
+		if(!list.isEmpty()){
+			return list;
+		}
+		else {
+			throw new Exception("id不存在");
+		}
+	}
+	
 	@Override
 	public void deleteById(long id) throws Exception {
 		
@@ -71,5 +95,7 @@ public class QqServiceImpl implements IQqService {
 		// 调用qqMapper添加
 		qqMapper.save(qq);
 	}
+
+	
 
 }

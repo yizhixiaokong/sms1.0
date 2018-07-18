@@ -12,6 +12,8 @@ public interface IQuestionService {
 	List<QuestionVM> findAllQuestionVM() throws Exception;
 
 	Question findById(long id) throws Exception;
+	
+	QuestionVM findQuestionVMById(long id) throws Exception;
 
 	void deleteById(long id) throws Exception;
 

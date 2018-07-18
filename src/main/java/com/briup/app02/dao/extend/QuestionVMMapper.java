@@ -6,4 +6,5 @@ import com.briup.app02.vm.QuestionVM;
 
 public interface QuestionVMMapper {
 	List<QuestionVM> findAllQuestionVM();
+	QuestionVM findQuestionVMById(long id);
 }

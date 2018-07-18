@@ -69,7 +69,18 @@ public class QuestionController {
 			return MsgResponse.error(e.getMessage());
 		}
 	}
-
+	
+	@GetMapping("findQuestionVMById")
+	public MsgResponse findQuestionVMById(long id) {
+		try {
+			QuestionVM questionVM = questionService.findQuestionVMById(id);
+			return MsgResponse.success("查询成功", questionVM);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
 	/**
 	 * 按照Id删除
 	 * 
