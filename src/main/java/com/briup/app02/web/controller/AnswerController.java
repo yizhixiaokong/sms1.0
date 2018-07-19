@@ -13,6 +13,7 @@ import com.briup.app02.service.IAnswerService;
 import com.briup.app02.util.MsgResponse;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @Api(description="答案相关接口")
 @RestController
@@ -30,6 +31,7 @@ public class AnswerController {
 	 * @param 
 	 * @return List<Answer>
 	 * */
+	@ApiOperation(value="查询所有回答",notes="查询回答")
 	@GetMapping("findAllAnswer")
 	public MsgResponse findAllAnswer() {
 
@@ -48,6 +50,7 @@ public class AnswerController {
 	 * @param long
 	 * @return Studnet;
 	 * */
+	@ApiOperation(value="通过ID查询回答",notes="查询回答")
 	@GetMapping("findAnswerById")
 	public MsgResponse findAnswerById(long id) {
 		try {
@@ -65,7 +68,7 @@ public class AnswerController {
 	 * @param long
 	 * @return String
 	 * */
-	
+	@ApiOperation(value="通过ID删除回答",notes="删除单个回答")
 	@GetMapping("deleteAnswerById")
 	public MsgResponse deleteAnswerById(long id) {
 		try {
@@ -84,6 +87,7 @@ public class AnswerController {
 	 * @param studeng
 	 * @return String
 	 * */
+	@ApiOperation(value="更新回答",notes="更新单个回答")
 	@PostMapping("updateAnswer")
 	public MsgResponse updateAnswer(Answer answer) {
 		try {
@@ -102,6 +106,7 @@ public class AnswerController {
 	 * @param answer
 	 * @return String
 	 * */
+	@ApiOperation(value="添加回答",notes="添加单个回答")
 	@PostMapping("saveAnswer")
 	public MsgResponse saveAnswer(Answer answer) {
 		try {	

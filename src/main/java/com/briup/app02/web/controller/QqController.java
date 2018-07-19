@@ -15,7 +15,10 @@ import com.briup.app02.vm.QuestionVM;
 import com.briup.app02.vm.QuestionnaireVM;
 
 import io.swagger.annotations.Api;
+import springfox.documentation.annotations.ApiIgnore;
 
+
+@ApiIgnore
 @Api(description="Qq相关接口")
 @RestController
 @RequestMapping("/qq")

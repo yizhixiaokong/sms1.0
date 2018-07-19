@@ -13,6 +13,7 @@ import com.briup.app02.service.ICourseService;
 import com.briup.app02.util.MsgResponse;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 
 @Api(description="课程相关接口")
@@ -31,6 +32,7 @@ public class CourseController {
 	 * @param 
 	 * @return List<Course>
 	 * */
+	@ApiOperation(value="查询所有课程",notes="查询课程信息")
 	@GetMapping("findAllCourse")
 	public MsgResponse findAllCourse() {
 
@@ -49,6 +51,7 @@ public class CourseController {
 	 * @param long
 	 * @return Studnet;
 	 * */
+	@ApiOperation(value="通过ID查询课程",notes="查询课程信息")
 	@GetMapping("findCourseById")
 	public MsgResponse findCourseById(long id) {
 		try {
@@ -66,7 +69,7 @@ public class CourseController {
 	 * @param long
 	 * @return String
 	 * */
-	
+	@ApiOperation(value="通过ID删除单个课程",notes="删除课程信息")
 	@GetMapping("deleteCourseById")
 	public MsgResponse deleteCourseById(long id) {
 		try {
@@ -85,6 +88,7 @@ public class CourseController {
 	 * @param studeng
 	 * @return String
 	 * */
+	@ApiOperation(value="更新课程信息",notes="更新课程信息")
 	@PostMapping("updateCourse")
 	public MsgResponse updateCourse(Course course) {
 		try {
@@ -103,6 +107,7 @@ public class CourseController {
 	 * @param course
 	 * @return String
 	 * */
+	@ApiOperation(value="保存单个课程",notes="保存课程信息")
 	@PostMapping("saveCourse")
 	public MsgResponse saveCourse(Course course) {
 		try {	
