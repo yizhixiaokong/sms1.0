@@ -44,6 +44,11 @@ public class QuestionnaireController {
 		}
 	}
 
+	/**
+	 * 查询全部
+	 * @param 
+	 * @return List<QuestionnaireVM>
+	 * */
 	@GetMapping("findAllQuestionnaireVM")
 	public MsgResponse findAllQuestionnaireVM() {
 

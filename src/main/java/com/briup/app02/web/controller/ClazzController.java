@@ -58,7 +58,6 @@ public class ClazzController {
 		}
 	}
 
-	
 	/**
 	 * 按照Id查询
 	 * @param long

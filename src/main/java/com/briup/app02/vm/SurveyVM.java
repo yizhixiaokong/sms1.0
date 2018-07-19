@@ -9,7 +9,7 @@ public class SurveyVM {
 	private String state;
 	private Double average;
 	private String surveydate;
-	private QuestionnaireVM questionnaireVM;
+	private QuestionnaireVM questionnaireVMs;
 	private User user;
 	private Clazz clazz;
 
@@ -46,11 +46,11 @@ public class SurveyVM {
 	}
 
 	public QuestionnaireVM getQuestionnaireVM() {
-		return questionnaireVM;
+		return questionnaireVMs;
 	}
 
 	public void setQuestionnaireVM(QuestionnaireVM questionnaireVM) {
-		this.questionnaireVM = questionnaireVM;
+		this.questionnaireVMs = questionnaireVM;
 	}
 
 	public User getUser() {

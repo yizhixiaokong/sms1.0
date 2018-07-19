@@ -11,7 +11,7 @@
 	</select>
 
 
-	<!-- 查询QuestionVMByID -->
+	<!-- 查询QuestionnaireVMByID -->
 	<select id="findQuestionnaireVMById" resultMap="QuestionnaireVMResultMap">
 		select * from
 		poll_questionnaire where id = #{id}

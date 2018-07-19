@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.briup.app02.bean.Survey;
 import com.briup.app02.service.ISurveyService;
 import com.briup.app02.util.MsgResponse;
+import com.briup.app02.vm.SurveyVM;
 
 import io.swagger.annotations.Api;
 
@@ -43,6 +44,17 @@ public class SurveyController {
 		}
 	}
 
+	@GetMapping("findAllSurveyVM")
+	public MsgResponse findAllSurveyVM() {
+
+		try {
+			List<SurveyVM> list = surveyService.findAllSurveyVM();
+			return MsgResponse.success("查询成功", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	/**
 	 * 按照Id查询
@@ -60,6 +72,16 @@ public class SurveyController {
 		}
 	}
 
+	@GetMapping("findSurveyVMById")
+	public MsgResponse findSurveyVMById(long id) {
+		try {
+			SurveyVM surveyVM = surveyService.findSurveyVMById(id);
+			return MsgResponse.success("查询成功", surveyVM);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
 	
 	/**
 	 * 按照Id删除
